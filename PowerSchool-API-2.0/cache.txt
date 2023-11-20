@@ -1,0 +1,508 @@
+Client {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  wsdl: <ref *1> WSDL {
+    content: '<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://publicportal.rest.powerschool.pearson.com/xsd" xmlns:ax2108="http://vo.rest.powerschool.pearson.com/xsd" xmlns:ax2109="http://util.java/xsd" xmlns:tns="http://publicportal.rest.powerschool.pearson.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax2111="http://model.rest.powerschool.pearson.com/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://publicportal.rest.powerschool.pearson.com/">\r\n' +
+      '    <wsdl:documentation>\r\n' +
+      '            P/S Public Portal Services JSON\r\n' +
+      '        </wsdl:documentation>\r\n' +
+      '    <wsdl:types>\r\n' +
+      '        <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://util.java/xsd">\r\n' +
+      '            <xs:complexType name="Locale">\r\n' +
+      '                <xs:sequence>\r\n' +
+      '                    <xs:element minOccurs="0" name="ISO3Country" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="ISO3Language" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayCountry" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayLanguage" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayName" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayScript" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayVariant" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element maxOccurs="unbounded" minOccurs="0" name="extensionKeys" nillable="true" type="xs:anyType"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="script" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element maxOccurs="unbounded" minOccurs="0" name="unicodeLocaleAttributes" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element maxOccurs="unbounded" minOccurs="0" name="unicodeLocaleKeys" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string"/>\r\n' +
+      '                </xs:sequence>\r\n' +
+      '            </xs:complexType>\r\n' +
+      '        </xs:schema>\r\n' +
+      '        <xs:schema xmlns:ax2113="http://vo.rest.powerschool.pearson.com/xsd" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://publicportal.rest.powerschool.pearson.com/xsd">\r\n' +
+      '            <xs:import namespace="http://vo.rest.powerschool.pearson.com/xsd"/>\r\n' +
+      '            <xs:element name="validateServiceToken">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="redirectURL" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="validateServiceTokenResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:RedirectURLResultVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="storeNotificationSettings">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="ns" nillable="true" type="ax2113:NotificationSettingsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="storeNotificationSettingsResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="sendPasswordRecoveryEmail">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element name="userType" type="xs:int"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="sendPasswordRecoveryEmailResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:MessageVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverUsername">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverUsernameResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:MessageVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverPassword">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element name="userType" type="xs:int"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="recoveryToken" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverPasswordResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:PasswordResetVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logoutAndDelinkDeviceToken">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="deviceToken" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logoutAndDelinkDeviceTokenResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logout">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logoutResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="loginToPublicPortal">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="loginToPublicPortalResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="login">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element name="userType" type="xs:int"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="loginResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '    '... 77205 more characters,
+    uri: 'https://fccps.powerschool.com/pearson-rest/services/PublicPortalServiceJSON?wsdl',
+    _includesWsdl: [],
+    WSDL_CACHE: {
+      'https://fccps.powerschool.com/pearson-rest/services/PublicPortalServiceJSON?wsdl': [Circular *1]
+    },
+    _originalIgnoredNamespaces: undefined,
+    options: {
+      ignoredNamespaces: [Array],
+      forceSoapVersion: undefined,
+      valueKey: '$value',
+      xmlKey: '$xml',
+      wsdl_headers: undefined,
+      wsdl_options: [Object],
+      ignoreBaseNameSpaces: false,
+      attributesKey: 'attributes',
+      envelopeKey: 'soap'
+    },
+    isLoaded: true,
+    definitions: Definitions {
+      nsName: 'wsdl:definitions',
+      prefix: 'wsdl',
+      name: 'definitions',
+      nsURI: '',
+      parent: null,
+      children: [Array],
+      xmlns: [Object],
+      valueKey: '$value',
+      xmlKey: '$xml',
+      ignoredNamespaces: [Array],
+      forceSoapVersion: undefined,
+      '$targetNamespace': 'http://publicportal.rest.powerschool.pearson.com/',
+      targetNamespace: 'http://publicportal.rest.powerschool.pearson.com/',
+      messages: [Object],
+      portTypes: [Object],
+      bindings: [Object],
+      services: [Object],
+      schemas: [Object]
+    },
+    xml: '<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://publicportal.rest.powerschool.pearson.com/xsd" xmlns:ax2108="http://vo.rest.powerschool.pearson.com/xsd" xmlns:ax2109="http://util.java/xsd" xmlns:tns="http://publicportal.rest.powerschool.pearson.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax2111="http://model.rest.powerschool.pearson.com/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://publicportal.rest.powerschool.pearson.com/">\r\n' +
+      '    <wsdl:documentation>\r\n' +
+      '            P/S Public Portal Services JSON\r\n' +
+      '        </wsdl:documentation>\r\n' +
+      '    <wsdl:types>\r\n' +
+      '        <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://util.java/xsd">\r\n' +
+      '            <xs:complexType name="Locale">\r\n' +
+      '                <xs:sequence>\r\n' +
+      '                    <xs:element minOccurs="0" name="ISO3Country" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="ISO3Language" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayCountry" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayLanguage" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayName" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayScript" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="displayVariant" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element maxOccurs="unbounded" minOccurs="0" name="extensionKeys" nillable="true" type="xs:anyType"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="script" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element maxOccurs="unbounded" minOccurs="0" name="unicodeLocaleAttributes" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element maxOccurs="unbounded" minOccurs="0" name="unicodeLocaleKeys" nillable="true" type="xs:string"/>\r\n' +
+      '                    <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string"/>\r\n' +
+      '                </xs:sequence>\r\n' +
+      '            </xs:complexType>\r\n' +
+      '        </xs:schema>\r\n' +
+      '        <xs:schema xmlns:ax2113="http://vo.rest.powerschool.pearson.com/xsd" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://publicportal.rest.powerschool.pearson.com/xsd">\r\n' +
+      '            <xs:import namespace="http://vo.rest.powerschool.pearson.com/xsd"/>\r\n' +
+      '            <xs:element name="validateServiceToken">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="redirectURL" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="validateServiceTokenResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:RedirectURLResultVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="storeNotificationSettings">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="ns" nillable="true" type="ax2113:NotificationSettingsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="storeNotificationSettingsResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="sendPasswordRecoveryEmail">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element name="userType" type="xs:int"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="sendPasswordRecoveryEmailResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:MessageVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverUsername">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverUsernameResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:MessageVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverPassword">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element name="userType" type="xs:int"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="recoveryToken" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="recoverPasswordResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:PasswordResetVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logoutAndDelinkDeviceToken">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="deviceToken" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logoutAndDelinkDeviceTokenResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logout">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="userSessionVO" nillable="true" type="ax2113:UserSessionVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="logoutResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="loginToPublicPortal">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="loginToPublicPortalResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="login">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>\r\n' +
+      '                        <xs:element name="userType" type="xs:int"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '            </xs:element>\r\n' +
+      '            <xs:element name="loginResponse">\r\n' +
+      '                <xs:complexType>\r\n' +
+      '                    <xs:sequence>\r\n' +
+      '                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2113:ResultsVO"/>\r\n' +
+      '                    </xs:sequence>\r\n' +
+      '                </xs:complexType>\r\n' +
+      '    '... 77205 more characters,
+    services: { PublicPortalServiceJSON: [Service] },
+    xmlnsInEnvelope: ' xmlns:ns="http://publicportal.rest.powerschool.pearson.com/xsd" xmlns:ax2108="http://vo.rest.powerschool.pearson.com/xsd" xmlns:ax2109="http://util.java/xsd" xmlns:tns="http://publicportal.rest.powerschool.pearson.com/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax2111="http://model.rest.powerschool.pearson.com/xsd" xmlns:ax2113="http://vo.rest.powerschool.pearson.com/xsd" xmlns:ax2110="http://util.java/xsd" xmlns:ax2112="http://model.rest.powerschool.pearson.com/xsd"'
+  },
+  soapHeaders: [],
+  httpHeaders: {},
+  bodyAttributes: [],
+  xmlHandler: XMLHandler {
+    schemas: {
+      'http://util.java/xsd': [Schema],
+      'http://publicportal.rest.powerschool.pearson.com/xsd': [Schema],
+      'http://vo.rest.powerschool.pearson.com/xsd': [Schema],
+      'http://model.rest.powerschool.pearson.com/xsd': [Schema]
+    },
+    options: {
+      wsdl_options: [Object],
+      valueKey: '$value',
+      xmlKey: '$xml',
+      attributesKey: '$attributes',
+      xsiTypeKey: '$xsiType',
+      date: [Object]
+    }
+  },
+  getCredentialComplexityRules: [Function (anonymous)],
+  validateServiceToken: [Function (anonymous)],
+  logoutAndDelinkDeviceToken: [Function (anonymous)],
+  login: [Function (anonymous)],
+  getStudentData: [Function (anonymous)],
+  sendPasswordRecoveryEmail: [Function (anonymous)],
+  logout: [Function (anonymous)],
+  loginToPublicPortal: [Function (anonymous)],
+  recoverUsername: [Function (anonymous)],
+  linkDeviceTokenToUser: [Function (anonymous)],
+  recoverPassword: [Function (anonymous)],
+  getStudentPhoto: [Function (anonymous)],
+  getSchoolMapBySchoolNumber: [Function (anonymous)],
+  storeNotificationSettings: [Function (anonymous)],
+  getStartStopTimeForAllSections: [Function (anonymous)],
+  PublicPortalServiceJSON: {
+    PublicPortalServiceJSONHttpsSoap11Endpoint: {
+      getCredentialComplexityRules: [Function (anonymous)],
+      validateServiceToken: [Function (anonymous)],
+      logoutAndDelinkDeviceToken: [Function (anonymous)],
+      login: [Function (anonymous)],
+      getStudentData: [Function (anonymous)],
+      sendPasswordRecoveryEmail: [Function (anonymous)],
+      logout: [Function (anonymous)],
+      loginToPublicPortal: [Function (anonymous)],
+      recoverUsername: [Function (anonymous)],
+      linkDeviceTokenToUser: [Function (anonymous)],
+      recoverPassword: [Function (anonymous)],
+      getStudentPhoto: [Function (anonymous)],
+      getSchoolMapBySchoolNumber: [Function (anonymous)],
+      storeNotificationSettings: [Function (anonymous)],
+      getStartStopTimeForAllSections: [Function (anonymous)]
+    },
+    PublicPortalServiceJSONHttpSoap11Endpoint: {
+      getCredentialComplexityRules: [Function (anonymous)],
+      validateServiceToken: [Function (anonymous)],
+      logoutAndDelinkDeviceToken: [Function (anonymous)],
+      login: [Function (anonymous)],
+      getStudentData: [Function (anonymous)],
+      sendPasswordRecoveryEmail: [Function (anonymous)],
+      logout: [Function (anonymous)],
+      loginToPublicPortal: [Function (anonymous)],
+      recoverUsername: [Function (anonymous)],
+      linkDeviceTokenToUser: [Function (anonymous)],
+      recoverPassword: [Function (anonymous)],
+      getStudentPhoto: [Function (anonymous)],
+      getSchoolMapBySchoolNumber: [Function (anonymous)],
+      storeNotificationSettings: [Function (anonymous)],
+      getStartStopTimeForAllSections: [Function (anonymous)]
+    },
+    PublicPortalServiceJSONHttpSoap12Endpoint: {
+      getCredentialComplexityRules: [Function (anonymous)],
+      validateServiceToken: [Function (anonymous)],
+      logoutAndDelinkDeviceToken: [Function (anonymous)],
+      login: [Function (anonymous)],
+      getStudentData: [Function (anonymous)],
+      sendPasswordRecoveryEmail: [Function (anonymous)],
+      logout: [Function (anonymous)],
+      loginToPublicPortal: [Function (anonymous)],
+      recoverUsername: [Function (anonymous)],
+      linkDeviceTokenToUser: [Function (anonymous)],
+      recoverPassword: [Function (anonymous)],
+      getStudentPhoto: [Function (anonymous)],
+      getSchoolMapBySchoolNumber: [Function (anonymous)],
+      storeNotificationSettings: [Function (anonymous)],
+      getStartStopTimeForAllSections: [Function (anonymous)]
+    },
+    PublicPortalServiceJSONHttpsSoap12Endpoint: {
+      getCredentialComplexityRules: [Function (anonymous)],
+      validateServiceToken: [Function (anonymous)],
+      logoutAndDelinkDeviceToken: [Function (anonymous)],
+      login: [Function (anonymous)],
+      getStudentData: [Function (anonymous)],
+      sendPasswordRecoveryEmail: [Function (anonymous)],
+      logout: [Function (anonymous)],
+      loginToPublicPortal: [Function (anonymous)],
+      recoverUsername: [Function (anonymous)],
+      linkDeviceTokenToUser: [Function (anonymous)],
+      recoverPassword: [Function (anonymous)],
+      getStudentPhoto: [Function (anonymous)],
+      getSchoolMapBySchoolNumber: [Function (anonymous)],
+      storeNotificationSettings: [Function (anonymous)],
+      getStartStopTimeForAllSections: [Function (anonymous)]
+    }
+  },
+  httpClient: HttpClient {
+    options: {
+      wsdl_options: [Object],
+      valueKey: '$value',
+      xmlKey: '$xml',
+      attributesKey: '$attributes',
+      xsiTypeKey: '$xsiType',
+      date: [Object]
+    },
+    _request: [Function: request] {
+      get: [Function (anonymous)],
+      head: [Function (anonymous)],
+      options: [Function (anonymous)],
+      post: [Function (anonymous)],
+      put: [Function (anonymous)],
+      patch: [Function (anonymous)],
+      del: [Function (anonymous)],
+      delete: [Function (anonymous)],
+      jar: [Function (anonymous)],
+      cookie: [Function (anonymous)],
+      defaults: [Function (anonymous)],
+      forever: [Function (anonymous)],
+      Request: [Function],
+      initParams: [Function: initParams],
+      debug: [Getter/Setter]
+    }
+  },
+  [Symbol(shapeMode)]: false,
+  [Symbol(kCapture)]: false
+}
