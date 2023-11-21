@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsonc": "^2.0.0",
     "strong-soap": "^3.5.6"
   }
 }

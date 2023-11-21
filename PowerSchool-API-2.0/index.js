@@ -1,11 +1,23 @@
 const soap = require("strong-soap").soap;
+const WSDL = soap.WSDL;
+
+const fs = require("fs");
+const jsonc = require("jsonc");
 
 async function getAPI(url) {
+  let start = new Date();
   let client;
 
   const reqOptions = {
     auth: { user: "pearson", pass: "m0bApP5", sendImmediately: false },
   };
+
+  await new Promise((resolve, reject) => {
+    WSDL.open(url + "?wsdl", { wsdl_options: reqOptions }, (error, wsdl) => {
+      console.log(wsdl);
+      reolve();
+    });
+  });
 
   await new Promise((resolve, reject) => {
     soap.createClient(url + "?wsdl", { wsdl_options: reqOptions }, (err, c) => {
@@ -16,8 +28,17 @@ async function getAPI(url) {
       resolve();
     });
   });
+  console.log(typeof client);
+  // client = jsonc.parse(jsonc.stringify(client));
+
+  console.log("create client");
+  console.log((new Date() - start) / 1000);
 
   client.setEndpoint(url);
+  // fs.writeFile("./test.json", jsonc.stringify(client), () => {});
+
+  console.log("set endpoint");
+  console.log((new Date() - start) / 1000);
 
   let session;
 
@@ -34,11 +55,16 @@ async function getAPI(url) {
     );
   });
 
+  console.log("login");
+  console.log((new Date() - start) / 1000);
   // console.log(session);
+
+  // console.log(session);
+  //
 
   let data = {
     userSessionVO: {
-      userId: session.userID,
+      userId: session.userId,
       serviceTicket: session.serviceTicket,
       serverInfo: {
         apiVersion: session.serverInfo.apiVersion,
@@ -54,9 +80,16 @@ async function getAPI(url) {
   };
 
   client.getStudentData(data, reqOptions, (err, result) => {
-    // console.log(result);
-    console.log(err);
-    // console.log(studentData.teachers);
+    var studentData = result.return.studentDataVOs[0];
+
+    studentData.teachers.forEach((teacher) => {
+      console.log(teacher.firstName);
+    });
+
+    console.log("get data");
+    console.log((new Date() - start) / 1000);
+    // console.log(err);
+    // // console.log(studentData.teachers);
   });
 
   // console.log(session);
@@ -68,6 +101,11 @@ async function getAPI(url) {
   //     console.log(err);
   //   },
   // );
+}
+function safelyParseUnpredictableArray(arr) {
+  if (!arr) return [];
+  if (Array.isArray(arr)) return arr;
+  return [arr];
 }
 
 getAPI(
