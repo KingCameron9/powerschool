@@ -3,30 +3,37 @@ const WSDL = soap.WSDL;
 
 const fs = require("fs");
 const jsonc = require("jsonc");
+const flatted = require("flatted");
 
 async function getAPI(url) {
   let start = new Date();
   let client;
+  let wsdl;
 
   const reqOptions = {
     auth: { user: "pearson", pass: "m0bApP5", sendImmediately: false },
   };
 
   await new Promise((resolve, reject) => {
-    WSDL.open(url + "?wsdl", { wsdl_options: reqOptions }, (error, wsdl) => {
+    WSDL.open(url + "?wsdl", { wsdl_options: reqOptions }, (error, nwsdl) => {
       console.log(wsdl);
-      reolve();
+      wsdl = nwsdl;
+      resolve();
     });
   });
 
   await new Promise((resolve, reject) => {
-    soap.createClient(url + "?wsdl", { wsdl_options: reqOptions }, (err, c) => {
-      if (!c) {
-        console.log("error: " + err);
-      }
-      client = c;
-      resolve();
-    });
+    soap.createClient(
+      "wsdl",
+      { WSDL_CACHE: { wsdl: wsdl }, wsdl_options: reqOptions },
+      (err, c) => {
+        if (!c) {
+          console.log("error: " + err);
+        }
+        client = c;
+        resolve();
+      },
+    );
   });
   console.log(typeof client);
   // client = jsonc.parse(jsonc.stringify(client));
