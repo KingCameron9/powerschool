@@ -69,7 +69,7 @@ async function getAPI(url) {
   // console.log(session);
   //
 
-  let data = {
+  const data = {
     userSessionVO: {
       userId: session.userId,
       serviceTicket: session.serviceTicket,
