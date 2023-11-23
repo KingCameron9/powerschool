@@ -3,7 +3,10 @@
 	import { onMount } from "svelte";
 
 
-  let data = {teachers: []};
+  let data = {teachers: [], finalGrades: [], sections: []};
+
+  let sections: PowerSchoolClass[] = [];
+
   
   async function getStudentData() {
     const req = await fetch(
@@ -22,11 +25,27 @@
 
   onMount(async () => {
     data = await getStudentData();
+    data.sections.forEach((section: any) => {
+      let thisSection: PowerSchoolClass = {
+        className: "", 
+        teacherName: "" 
+      }
+
+      thisSection.teacherName = section.schoolCourseTitle;
+
+      sections.push(thisSection);
+    })
+    console.log('data', sections);
   });
 
-</script>
-<!-- <p>{JSON.stringify(data)}</p> -->
+  type PowerSchoolClass = {
+    className: string,
+    teacherName: string
+  };
 
-{#each data.teachers as teacher}
-  <p>{teacher.firstName + " " + teacher.lastName}</p>
+</script>
+
+<p>hello</p>
+{#each sections as section}
+  <p>{section.teacherName} hello</p>
 {/each}
